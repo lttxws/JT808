@@ -1,0 +1,23 @@
+{
+    "name": "lttxws/jt808",
+    "description": "test",
+    "type": "library",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "require":
+    {
+        "php": ">=7.0"
+    },
+    "authors": [
+    {
+        "name": "litaotxws",
+        "email": "litaotxws@163.com"
+    }],
+    "autoload":
+    {
+        "psr-4":
+        {
+            "lttxws\\": "src/"
+        }
+    }
+}
