@@ -6,7 +6,8 @@
     "minimum-stability": "dev",
     "require":
     {
-        "php": ">=7.0"
+        "php": ">=7.0",
+        "workerman/workerman": "^3.5.20"
     },
     "authors": [
     {
