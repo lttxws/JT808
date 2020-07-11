@@ -5,11 +5,17 @@
 
 ## 使用方法：
 composer require lttxws/jt808
+
 分别以命令行的形式启动根目录下 server.php client.php
+
 php server.php start
-![server](https://github.com/lttxws/JT808/tree/master/images/server.png "server")
+
+![server](https://github.com/lttxws/JT808/tree/master/images/server.jpg "server")
+
 php client.php start
-![client](https://github.com/lttxws/JT808/tree/master/images/client.png "client")
+
+![client](https://github.com/lttxws/JT808/tree/master/images/client.jpg "client")
+
 client.php中98行，可以更改不同数据，模拟客户端发送不同的报文
 ## 代码示例：
 ### 服务端:
