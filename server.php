@@ -1,7 +1,6 @@
 <?php
-require_once __DIR__ . '/Workerman/Autoloader.php';
-require_once __DIR__ . '/JT808_class.php';
-use Common\JT808;
+require_once __DIR__ . '/vendor/autoload.php';
+use lttxws\JT808;
 use Workerman\Worker;
 
 // 创建一个Worker监听8095端口，不使用任何应用层协议
@@ -10,7 +9,6 @@ $tcp_worker = new Worker("tcp://192.168.1.5:8095");
 $tcp_worker->count = 12;
 // 当客户端发来数据时
 $tcp_worker->onMessage = function ($connection, $data) {
-	$sql = new Db(mysqlConfig::load());
 	$JT808 = new JT808();
 	//16进制数据
 	$data16Arrays = $JT808->getTo16Bytes($data);
@@ -22,10 +20,8 @@ $tcp_worker->onMessage = function ($connection, $data) {
 		$equipmentNumber = $JT808->getEquipmentNumber($data16Array);
 		//位置信息上报获取
 		if ($MessageId == '0200' && $equipmentNumber) {
-			//echo '1212';
 			//报警信息
 			$AlarmMessage = $JT808->getAlarmMessage($data16Array, 13);
-			//echo $AlarmMessage, PHP_EOL;
 			//状态
 			$status = $JT808->getPositionStatus($data16Array, 17);
 			//经度

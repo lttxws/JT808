@@ -1,0 +1,22 @@
+2020-07-11 09:12:42 pid:1 Error: Class 'Db' not found in D:\phpstudy_pro\WWW\jt808\server.php:12
+Stack trace:
+#0 D:\phpstudy_pro\WWW\jt808\vendor\workerman\workerman\Connection\TcpConnection.php(683): {closure}(Object(Workerman\Connection\TcpConnection), '~\x01\x00\x00-\x01\x95\x01\x13s\x97\x00\x18\x00\x00...')
+#1 D:\phpstudy_pro\WWW\jt808\vendor\workerman\workerman\Events\Select.php(293): Workerman\Connection\TcpConnection->baseRead(Resource id #20)
+#2 D:\phpstudy_pro\WWW\jt808\vendor\workerman\workerman\Worker.php(2416): Workerman\Events\Select->loop()
+#3 D:\phpstudy_pro\WWW\jt808\vendor\workerman\workerman\Worker.php(1404): Workerman\Worker->run()
+#4 D:\phpstudy_pro\WWW\jt808\vendor\workerman\workerman\Worker.php(1347): Workerman\Worker::forkWorkersForWindows()
+#5 D:\phpstudy_pro\WWW\jt808\vendor\workerman\workerman\Worker.php(546): Workerman\Worker::forkWorkers()
+#6 D:\phpstudy_pro\WWW\jt808\server.php(54): Workerman\Worker::runAll()
+#7 {main}
+2020-07-11 09:12:42 pid:1 Worker process terminated
+2020-07-11 09:13:08 pid:1 Error: Class 'Common\JT808' not found in D:\phpstudy_pro\WWW\jt808\server.php:12
+Stack trace:
+#0 D:\phpstudy_pro\WWW\jt808\vendor\workerman\workerman\Connection\TcpConnection.php(683): {closure}(Object(Workerman\Connection\TcpConnection), '~\x01\x00\x00-\x01\x95\x01\x13s\x97\x00\x18\x00\x00...')
+#1 D:\phpstudy_pro\WWW\jt808\vendor\workerman\workerman\Events\Select.php(293): Workerman\Connection\TcpConnection->baseRead(Resource id #20)
+#2 D:\phpstudy_pro\WWW\jt808\vendor\workerman\workerman\Worker.php(2416): Workerman\Events\Select->loop()
+#3 D:\phpstudy_pro\WWW\jt808\vendor\workerman\workerman\Worker.php(1404): Workerman\Worker->run()
+#4 D:\phpstudy_pro\WWW\jt808\vendor\workerman\workerman\Worker.php(1347): Workerman\Worker::forkWorkersForWindows()
+#5 D:\phpstudy_pro\WWW\jt808\vendor\workerman\workerman\Worker.php(546): Workerman\Worker::forkWorkers()
+#6 D:\phpstudy_pro\WWW\jt808\server.php(53): Workerman\Worker::runAll()
+#7 {main}
+2020-07-11 09:13:08 pid:1 Worker process terminated
