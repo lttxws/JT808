@@ -517,6 +517,8 @@ class JT808 {
 	public function getVerifyNumberArray($data, $auth = '31313131') {
 		//数组开始五位
 		//$arrayStartFiveBytes = array('7E', '80', '01');
+		//注册应答结果0
+		$ret = array('00');
 		//消息ID
 		$messageId = $this->getMessageIdArray($data);
 		$messageid = implode($messageId);
@@ -525,19 +527,17 @@ class JT808 {
 		if ($messageid == '0100') {
 			$arrayStartFiveBytes = array('7E', '81', '00');
 			$jianquan = str_split($auth, 2);
-			$messageBody = array_merge($messageBody, $jianquan);
+			$messageBody = array_merge($messageBody, $ret, $jianquan);
 		} else {
 			$arrayStartFiveBytes = array('7E', '80', '01');
 			$jianquan = [];
-			$messageBody = array_merge($messageBody, $messageId, $jianquan);
+			$messageBody = array_merge($messageBody, $messageId, $ret, $jianquan);
 		}
 		//设备号
 		$equipmentNumber = $this->getEquipmentNumberArray($data);
 		//平台流水号
 		//$systemNumber = $this->getSequenceNumberArray();
 		$systemNumbers = $this->getMessageNumberArray($data);
-		//注册应答结果0
-		$ret = array('00');
 
 		//消息体长度
 		/*if ($messageid == '0100') {
@@ -564,7 +564,8 @@ class JT808 {
 		//接上一步继续与消息体合并
 		$startEquipmentSystemAndMessageBody = array_merge($startEquipmentAndSystemNumber, $messageBody);
 		//接上一步应答结果
-		$dataAndRet = array_merge($startEquipmentSystemAndMessageBody, $ret);
+		//$dataAndRet = array_merge($startEquipmentSystemAndMessageBody, $ret);
+		$dataAndRet = $startEquipmentSystemAndMessageBody;
 		//生成校验码
 		//$dataAndRetXor = $this->getEveryXor($dataAndRet);
 		$dataAndRetXor = $this->checkCode($dataAndRet);

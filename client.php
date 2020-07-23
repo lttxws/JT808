@@ -25,7 +25,7 @@ $worker->onWorkerStart = function () {
 		$time_interval = 3;
 
 		//改为data为注册 data1心跳包 data2位置信息上报
-		$sendData = $data;
+		$sendData = $data1;
 		// 给connection对象临时添加一个timer_id属性保存定时器id
 		$connection->timer_id = Timer::add($time_interval, function () use ($connection, $sendData) {
 			$connection->send($sendData);
