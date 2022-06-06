@@ -4,6 +4,13 @@
 使用wokrerman来进行数据收发
 
 ## 使用方法：
+
+该项目需要通过 composer 来管理依赖包。 先安装 composer 
+
+然后到本项目解压缩后的目录下运行 ，安装依赖包
+
+composer install
+
 composer require lttxws/jt808
 
 分别以命令行的形式启动根目录下 server.php client.php
