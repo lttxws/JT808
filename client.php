@@ -2,7 +2,7 @@
 require_once __DIR__ . '/vendor/autoload.php';
 use Workerman\Connection\AsyncTcpConnection;
 use Workerman\Worker;
-use \Workerman\Lib\Timer;
+use Workerman\Timer;
 $worker = new Worker();
 $status = true;
 $worker->onWorkerStart = function () {
